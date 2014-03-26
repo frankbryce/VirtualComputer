@@ -1,0 +1,19 @@
+---------- Notes about MM's assembly Language -------
+Each instruction is a 6 digit number.
+The first two digits are the op code.
+The 3rd digit is the register number (0 through 9)
+The last 3 digits are a memory address (memory contains
+	1000 words)
+
+--------------- Instruction Set for MM --------------
+000000       Halt
+01rmmm       Load register r with contents of address mmm.
+02rmmm       Store the contents of register r at address mmm.
+03rnnn       Load register r with the number nnn.
+04r00s       Load register r with the memory word addressed by register s.
+05r00s       Add contents of register s to register r
+06r00s       Sub contents of register s from register r
+07r00s       Mul contents of register r by register s
+08r00s       Div contents of register r by register s
+100mmm       Jump to location mmm
+11rmmm       Jump to location mmm if register r is zero
