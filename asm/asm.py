@@ -1,8 +1,6 @@
-def run():
+def run(mmfile,mmlfile):
     import re
-    import util
-    import mm
-    import const
+    from inc import util
 
     #keywords (can't be used for labels)
     ops={"hlt":"00", "ld":"01", "sto":"02", "ld#":"03", "ldi":"04", "add":"05", "sub":"06", 
@@ -11,9 +9,8 @@ def run():
     adres=dict()
 
     # assembly file
-    filename = const.filename
-    asm = util.getAsm(filename)
-    mml = util.getMml(filename)
+    asm = mmfile
+    mml = mmlfile
     # address to start the instructions in memory
     startaddr = 100
 
@@ -95,4 +92,3 @@ def run():
 
     pass1()
     pass2()
-    mm.run(filename)

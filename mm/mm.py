@@ -9,8 +9,7 @@ def run(filename):
     # imports
     import inst
     import dec
-    import util
-    import const
+    from inc import const
     
     global memory
     global registers
@@ -22,7 +21,7 @@ def run(filename):
     # debug flag
     debug = const.debug
     #program file
-    prog = util.getMml(filename)
+    prog = filename
 
     # display state
     def disp():
